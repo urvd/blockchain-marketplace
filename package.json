@@ -1,0 +1,17 @@
+{
+  "name": "blockchain-backend",
+  "version": "1.0.0",
+  "description": "blockchain",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ganache-cli": "^6.12.1",
+    "generate": "^0.14.0",
+    "truffle": "^5.1.50",
+    "web3": "^1.3.0"
+  }
+}

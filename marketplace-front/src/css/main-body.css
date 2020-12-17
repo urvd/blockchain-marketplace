@@ -1,0 +1,13 @@
+.main-body {
+    position: relative;
+    margin: 0 ;
+    border: 1px solid black;
+    background-color: lightblue;
+    height: 800px;
+    margin: 30px 10px 30px 10px;
+  }
+  
+  .main-body h2 {
+    text-align: start;
+    padding-left: 15px;
+  }  

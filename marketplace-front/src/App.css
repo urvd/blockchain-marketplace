@@ -1,0 +1,40 @@
+.App {
+  text-align: center;
+}
+
+.view {
+  position: relative;
+  height: auto;
+  margin-top: 0;
+  margin-right: 0;
+  background-color: grey
+}
+
+.menubar {
+  margin-left: 500px;
+  margin-right: 500px;
+  text-align: center;
+}
+
+.menubar ul {
+  padding-left: 50px;
+  padding-right: 50px;
+  border: solid 1px;
+  background-color: green;
+}
+
+.menubar ul li {
+  text-decoration: none;
+  display: inline-block;
+  align-items: center;
+  background-color: greenyellow;
+  padding: 10px;
+}
+
+.menubar li:hover {
+  background-color: lightblue
+}
+
+.menubar li:active {
+  background-color: lightblue
+}

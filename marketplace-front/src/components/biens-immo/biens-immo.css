@@ -1,0 +1,26 @@
+.collapse{
+    visibility: hidden;
+}
+.immo-b{
+    /* padding: 30px; */
+    background-color: aquamarine;
+}
+
+.immo-detail{
+    box-shadow: 1px;
+}
+.immo-detail div > button {
+    box-shadow: 10rem;
+}
+.immo-detail div > div {
+    box-shadow: 1px;
+    border: 1px solid grey;
+    padding: 5px;
+}
+
+.immo-main{
+}
+
+.immo-img {
+    box-shadow: 1px;
+}

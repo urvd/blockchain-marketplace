@@ -18,17 +18,13 @@
  *
  */
 
-const HDWalletProvider = require('@truffle/hdwallet-provider');
-const infuraKey = "41abb1cb24ec4c2a96cb01c20d2395db";
+// const HDWalletProvider = require('@truffle/hdwallet-provider');
+// const infuraKey = "fj4jll3k.....";
 //
-const fs = require('fs');
-const path = require("path");
-const mnemonic = fs.readFileSync(".secret").toString().trim();
-const ganache_mnemonic = fs.readFileSync(".ganach-secrets").toString().trim();
+// const fs = require('fs');
+// const mnemonic = fs.readFileSync(".secret").toString().trim();
 
 module.exports = {
-  
-  //contracts_build_directory: path.join(__dirname, "build/contracts"),
   /**
    * Networks define how you connect to your ethereum client and let you set the
    * defaults web3 uses to send transactions. If you don't specify one truffle
@@ -46,30 +42,11 @@ module.exports = {
     // tab if you use this network and you must also set the `host`, `port` and `network_id`
     // options below to some value.
     //
-    development: {
-      host: '127.0.0.1',
-      port: 7545,
-      network_id: '*' // Match any network id
-    },
-    // ganache: {
-    //   provider: () => {new HDWalletProvider(
-    //     ganache_mnemonic,
-    //       'http://127.0.0.1'
-    //     );
-    //   },     // Localhost (default: none)
-    //  port: 7545,            // Standard Ethereum port (default: none)
+    // development: {
+    //  host: "127.0.0.1",     // Localhost (default: none)
+    //  port: 8545,            // Standard Ethereum port (default: none)
     //  network_id: "*",       // Any network (default: none)
     // },
-    kovan: {
-      provider: () => {return new HDWalletProvider(
-          mnemonic,
-          'https://kovan.infura.io/v3/' + infuraKey
-        );
-      },     // Localhost (default: none)
-      network_id: "*",        // Any network (default: none)
-      gas: 8500000,           // Gas sent with each transaction (default: ~6700000)
-      gasPrice: 20000000000,           // Standard Ethereum port (default: none)
-    },
     // Another network with more advanced options...
     // advanced: {
     // port: 8777,             // Custom port
@@ -96,10 +73,7 @@ module.exports = {
     // production: true    // Treats this network as if it was a public net. (default: false)
     // }
   },
-  rpc: {
-    host: "127.0.0.1",
-    port: 8545
-  },
+
   // Set default mocha options here, use special reporters etc.
   mocha: {
     // timeout: 100000

@@ -1,0 +1,33 @@
+.row.app-header {
+    height: auto;
+    background-color: greenyellow;
+    text-align: center;
+    margin: 0px 20px 20px 20px;
+}
+
+.row.menubar {
+  text-align: center;
+  margin: 10px 200px 25px 200px;
+  padding-left: 230px;
+  /* border: 2px solid grey; */
+  background-color: antiquewhite;
+  border-radius: 4px;
+  box-shadow: 2px 2px 2px 2px;
+}
+
+.col.menu-item {
+  padding: 10px;
+}
+.col.menu-item :hover {
+  background-color: aquamarine;
+}
+
+.col.menu-item a{
+  text-decoration: none;
+}
+.col.menu-item a:active {
+  padding: 15px;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+}

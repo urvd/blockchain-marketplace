@@ -1,5 +1,5 @@
-const Users = artifacts.require('contracts/UsersContract');
+const Migrations = artifacts.require("Migrations");
 
-module.exports = function(deployer) {
-  deployer.deploy(Users);
+module.exports = function (deployer) {
+  deployer.deploy(Migrations);
 };

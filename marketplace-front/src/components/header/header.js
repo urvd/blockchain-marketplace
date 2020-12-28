@@ -2,7 +2,7 @@ import './header.css';
 import { Link } from "react-router-dom";
 import { Row, Col } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
-
+import {BsInfo, BsPower} from 'react-icons/bs';
 export default function MyHeader(){
     return (
         <Row className="app-header">
@@ -16,7 +16,7 @@ export default function MyHeader(){
 
             <Row className="menubar">
                 <Col className="menu-item" xs lg="2">
-                  <Button variant="primary">Info (click popover)</Button>
+                  <Button variant="primary"><h3><BsInfo /></h3></Button>
                 </Col>
                 <Col className="menu-item" xs lg="2">
                   <Link to="/home">Accueil</Link>
@@ -28,7 +28,7 @@ export default function MyHeader(){
                   <Link to="/ventes">Ventes</Link>
                 </Col>
                 <Col className="menu-item" xs lg="2">
-                  <Button variant="danger">Deconnection</Button>
+                  <Button variant="danger"><h3><BsPower/></h3></Button>
                 </Col>
             </Row>
             

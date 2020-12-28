@@ -3,6 +3,36 @@
 }
 
 .row.app-body {
-    background-color: antiquewhite;
-    /* background-color: aquamarine;*/
-  }
+    /* background-color: antiquewhite; */
+    box-shadow: 2px 2px 2px 2px;
+    background-color: aquamarine;
+}
+
+/* Bien immobillier components */
+.col.home-body {
+    margin: 30px
+}
+
+.immo{
+    margin-top: 20px;
+}
+.immob{
+  border-top: 1px solid grey;
+  border-left: 1px solid grey;
+  /* /margin-right: 300px; */
+  margin-bottom: 50px;
+}
+
+.row.immo {
+    border-top: 1px solid grey;
+    border-left: 1px solid grey;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.row.icons-alt {
+    background-color: aquamarine;
+}
+.row.icons-plus {
+    background-color: aquamarine;
+}  

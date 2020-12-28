@@ -6,7 +6,7 @@ export default function MyFooter(){
     return (
         <Row className="app-footer">
           <Col>
-            <h2>Powered by Urvd</h2>
+            <h3>Powered by Urvd</h3>
           </Col>
         </Row>
     );

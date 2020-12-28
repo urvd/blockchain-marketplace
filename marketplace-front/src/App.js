@@ -4,7 +4,7 @@ import './components/css/common.css';
 import {Suspense} from "react";
 import { BrowserRouter as Router,Switch, Route } from "react-router-dom";
 import { Container, Row, Col } from 'react-bootstrap';
-
+import {MenuFunc} from './model/config'
 import MyHeader from './components/header/header';
 import MyFooter from './components/footer/footer';
 import Home from './routes/home/home';
@@ -21,14 +21,21 @@ function App() {
             <Row >
               <Col>
                 <MyHeader/>
-                <Container fluid="xl">
+                  <Container fluid="xl">
 
-                      <Route exact path="/" component={Tmp} />    
-                      <Route path="/achats"  component={Achats}/>
-                      <Route path="/ventes" component={Ventes} />
-                      <Route path="/home" component={Home} />  
-
-                </Container>
+                    <Route exact path="/" component={Tmp} />    
+                    <Route path="/achats"> 
+                      <Achats tab={MenuFunc.ACHATS_Panier} />   
+                    </Route>  
+                    <Route path="/ventes" component={Ventes} />
+                    <Route path="/home" component={Home} />  
+                    <Route exact path="/achats?tab=panier">    
+                      <Achats tab={MenuFunc.ACHATS_Panier} />   
+                    </Route>  
+                    <Route exact path="/achats?tab=histo">    
+                      <Achats tab={MenuFunc.ACHATS_Archive} />   
+                    </Route>  
+                  </Container>
                 <MyFooter/>
               </Col>
             </Row>

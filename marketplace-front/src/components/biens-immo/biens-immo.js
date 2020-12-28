@@ -2,7 +2,7 @@ import './biens-immo.css';
 import React from "react";
 import {useState} from "react";
 import ReactDOM, { render } from "react-dom"
-import MenuTitle from '../../model/config';
+import {MenuFunc} from '../../model/config';
 import { Card, Container, Row, Col } from 'react-bootstrap';
 import Button  from 'react-bootstrap/Button';
 import Collapse from 'react-bootstrap/Collapse';
@@ -17,9 +17,32 @@ class BiensImobiliers extends React.Component {
 
     render() {
         const Nada = 'N/A';
-        
+        let actionBlock;
+        if(this.props.action === MenuFunc.HOME) {
+            if(this.props.immob.achat_status === 'Indisponible' || this.props.immob.achat_status === 'Encours'){
+                actionBlock = ( <Card.Body varient="flush">
+                                <Button variant="waning" disabled>Ajouter au panier</Button>
+                            </Card.Body>);
+            } else {
+                actionBlock = ( <Card.Body varient="flush">
+                                <Button variant="waning">Ajouter au panier</Button>
+                            </Card.Body>);
+            }  
+        }
+        if(this.props.action === MenuFunc.ACHATS_Panier) {
+            actionBlock = ( <Card.Body varient="flush">
+                                <ul>
+                                    <li>
+                                         <Button variant="waning">Enlever du panier</Button>
+                                    </li>
+                                    <li>
+                                         <Button variant="danger">Acheter</Button>
+                                    </li>
+                                </ul>
+                            </Card.Body>);
+        }
         return (
-            <Card style={{ width: '800px' }}>
+            <Card style={{ width: '700px' }}>
                 {/* champs d image ou non  */}
                 <ImagesBienImmob have_image={this.props.have_image} />
                 {/* champs d identité  */}
@@ -48,10 +71,8 @@ class BiensImobiliers extends React.Component {
                 <Card.Body className="immo-detail">
                     <DetailBienImmo  detail={this.props.immob.detail != null?this.props.immob.detail:Nada} />
                 </Card.Body>
-                 {/* champs d ajout au pannier */}
-                <Card.Body>
-                    <Button variant="waning">Ajouter au panier</Button>
-                </Card.Body>
+                {/* champs d ajout au pannier */}
+                {actionBlock}
             </Card>
         );
     }

@@ -18,11 +18,11 @@
  *
  */
 
-// const HDWalletProvider = require('@truffle/hdwallet-provider');
-// const infuraKey = "fj4jll3k.....";
-//
-// const fs = require('fs');
-// const mnemonic = fs.readFileSync(".secret").toString().trim();
+const HDWalletProvider = require('@truffle/hdwallet-provider');
+const infuraKey = "fj4jll3k.....";
+
+const fs = require('fs');
+const mnemonic = fs.readFileSync(".secrets").toString();
 
 module.exports = {
   /**
@@ -42,11 +42,18 @@ module.exports = {
     // tab if you use this network and you must also set the `host`, `port` and `network_id`
     // options below to some value.
     //
-    // development: {
-    //  host: "127.0.0.1",     // Localhost (default: none)
-    //  port: 8545,            // Standard Ethereum port (default: none)
-    //  network_id: "*",       // Any network (default: none)
-    // },
+    development: {
+     host: "127.0.0.1",     // Localhost (default: none)
+     port: 8545,            // Standard Ethereum port (default: none)
+     network_id: 1337,       // Any network (default: none)
+    },
+    versed_lamp: {
+    provider: () => new HDWalletProvider(mnemonic, "http://localhost:8545"),
+    network_id: 1337,       // Any network (default: none)
+    gas:6721975,
+    gasPrice:20000000000,
+    timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
+    },
     // Another network with more advanced options...
     // advanced: {
     // port: 8777,             // Custom port
@@ -73,7 +80,10 @@ module.exports = {
     // production: true    // Treats this network as if it was a public net. (default: false)
     // }
   },
-
+  rpc: {
+    host: "127.0.0.1",
+    port: 8545
+  },
   // Set default mocha options here, use special reporters etc.
   mocha: {
     // timeout: 100000

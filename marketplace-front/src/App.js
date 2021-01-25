@@ -10,6 +10,7 @@ import MyFooter from './components/footer/footer';
 import Home from './routes/home/home';
 import Achats from './routes/achats/achats';
 import Ventes from './routes/ventes/ventes';
+import './web3-sc';
 
 
 function App() {

@@ -23,7 +23,7 @@ const infuraKey = "fj4jll3k.....";
 
 const fs = require('fs');
 const mnemonic = fs.readFileSync(".secrets").toString();
-
+const PROJECT_ID= '41abb1cb24ec4c2a96cb01c20d2395db';
 module.exports = {
   /**
    * Networks define how you connect to your ethereum client and let you set the
@@ -47,13 +47,13 @@ module.exports = {
      port: 8545,            // Standard Ethereum port (default: none)
      network_id: 1337,       // Any network (default: none)
     },
-    versed_lamp: {
-    provider: () => new HDWalletProvider(mnemonic, "http://localhost:8545"),
-    network_id: 1337,       // Any network (default: none)
-    gas:6721975,
-    gasPrice:20000000000,
-    timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
-    },
+    // versed_lamp: {
+    // provider: () => new HDWalletProvider(mnemonic, "http://127.0.0.1:8545"),
+    // network_id: "*",       // Any network (default: none)
+    // gas:6721975,
+    // gasPrice:20000000000,
+    // timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
+    // },
     // Another network with more advanced options...
     // advanced: {
     // port: 8777,             // Custom port
@@ -65,14 +65,10 @@ module.exports = {
     // },
     // Useful for deploying to a public network.
     // NB: It's important to wrap the provider as a function.
-    // ropsten: {
-    // provider: () => new HDWalletProvider(mnemonic, `https://ropsten.infura.io/v3/YOUR-PROJECT-ID`),
-    // network_id: 3,       // Ropsten's id
-    // gas: 5500000,        // Ropsten has a lower block limit than mainnet
-    // confirmations: 2,    // # of confs to wait between deployments. (default: 0)
-    // timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
-    // skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
-    // },
+    kovan: {
+    provider: () => new HDWalletProvider(mnemonic, 'https://kovan.infura.io/v3/' + PROJECT_ID),
+    network_id: 42       // kovan's id
+    },
     // Useful for private networks
     // private: {
     // provider: () => new HDWalletProvider(mnemonic, `https://network.io`),
@@ -80,10 +76,10 @@ module.exports = {
     // production: true    // Treats this network as if it was a public net. (default: false)
     // }
   },
-  rpc: {
-    host: "127.0.0.1",
-    port: 8545
-  },
+  // rpc: {
+  //   host: 'http://127.0.0.1:8545',
+  //   port: 8545
+  // },
   // Set default mocha options here, use special reporters etc.
   mocha: {
     // timeout: 100000
